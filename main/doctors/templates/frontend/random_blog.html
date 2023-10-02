@@ -1,0 +1,21 @@
+{% load mediapath %}
+<div class="row mb-2">
+    <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">{{ object.title|title|truncatechars:100 }}</h3>
+                <p class="card-text mb-auto">{{ object.discription|title|truncatechars:100 }}</p>
+                <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                    <svg class="bi">
+                        <use xlink:href="#chevron-right">
+                    </svg>
+                </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img src="{% mediapath object.image %}" width="160"
+                     height="160" alt="Иллюстрация"
+                     class="bd-placeholder-img rounded-circle">
+            </div>
+        </div>
+    </div>
+</div>

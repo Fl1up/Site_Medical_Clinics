@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% load random %}
+{% block content %}
+    {% load mediapath %}
+
+    <header xmlns="http://www.w3.org/1999/html">
+        {% include "frontend/head.html" %}
+
+
+        <main>
+
+            <center> #RECLAMA
+                {% include "frontend/marketing.html" %}
+                #END_RECLAMA
+
+
+                #DOCTORS
+                <div>
+                    <header>
+                        <h3>Наша команда</h3>
+                        <h1><span class="blue">Познакомьтесь с нашими врачами</span></h1>
+                    </header>
+                </div>
+
+                <div class="row justify-content-center">
+                    {% for object in doctors|random|slice:":3" %}
+                        {% include "frontend/random_doctors.html" %}
+                    {% endfor %}
+                </div>
+                #END_DOCTORS
+
+                #NUMBER
+
+                <div class="number">
+                    {% include "frontend/number.html" %}
+                </div>
+                #END_NUMBER
+                <div>
+                    {% include "frontend/add_icons.html" %}
+                </div>
+
+                # SHOP
+
+                <header>
+                    <h3>Онлайн магазин</h3>
+                    <h1><span class="blue">Медицинские продукты</span></h1>
+                </header>
+                <div class="row justify-content-center">
+                    {% for object in shop|random|slice:":3" %}
+                        {% include "frontend/random_shop.html" %}
+                    {% endfor %}
+                </div>
+                #END_SHOP
+
+                # SALE
+                <body>
+                <div class="waviy">
+                    <span style="--i:1">А</span>
+                    <span style="--i:2">К</span>
+                    <span style="--i:3">Ц</span>
+                    <span style="--i:4">И</span>
+                    <span style="--i:5">Я</span>
+
+                    <div class="carousel-inner">
+                        <img src="/media/are_common/sale.png"
+                             alt=" Картинка"
+                             width="100%" height="100%"
+                             class=" border border-dark">
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                        <div class="carousel-caption text-start">
+                        </div>
+                    </div>
+                </div>
+                </body>
+                # END_SALE
+
+                # OFFER
+                <div>
+                    <main>
+                        {% include "frontend/sale_offer.html" %}
+                    </main>
+                </div>
+                # END_OFFER
+
+                #METRICS
+                <header>
+                    <h3>Наша команда</h3>
+                    <h1><span class="blue">Почему пациенты выбирают</span></h1>
+                </header>
+                <div>
+                    {% include "frontend/merits.html" %}
+                </div>
+                #END_METRICS
+                #otsib#
+                <div>
+                    <h3>Наши отзывы</h3>
+                    {% for object in reviews|random|slice:":3" %}
+                        {% include "frontend/random_reviews.html" %}
+                    {% endfor %}
+                </div>
+                #end_otsiv
+                #blog
+                <h3>Блоги</h3>
+                {% for object in blog|random|slice:":1" %}
+                    {% include "frontend/random_blog.html" %}
+                {% endfor %}
+                #end_blog
+
+
+        </main>
+{% endblock %}

@@ -1,0 +1,27 @@
+<div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    {% load mediapath %}
+                    <center/>
+                    <div class="card card-cover h-50 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                         style="background-color: #d4edda4;">
+                        <h5 class="card-text">{{ object.full_name|title|truncatechars:100 }} </h5>
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="{% mediapath object.img %}" width="20%"
+                                         height="300" alt="Иллюстрация"
+                                         class="rounded-circle border border-dark">
+                                </li>
+                        </div>
+                        <h7 class="card-text">{{ object.description }}<h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

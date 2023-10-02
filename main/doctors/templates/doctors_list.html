@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="col-12 mb-5">
+    </div>
+    {% for object in object_list %}
+        {% load mediapath %}
+        <div class="col-md-5">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    {% load mediapath %}
+                    <center/>
+                    <div class="card card-cover h-50 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                         style="background-color: #d4edda4;">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <center/>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <div class="ratio-1x1">
+                                    <img src="{% mediapath object.image %}" width="140" height="140" alt="Иллюстрация"
+                                         class="rounded-circle border border-dark">
+                                    <h3 class="card-text"> {{ object.full_name|title|truncatechars:100 }} </h3>
+                                </div>
+                                <h4 class="card-text"> {{ object.category_doctor|title|truncatechars:100 }} </h4>
+
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url "doctors:view" object.pk %}" class="btn btn-outline-info">Подробнее</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<div class="col-md-4">
+    <div class="card mb-3 box-shadow h-100">
+        <div class="testimonials text-center">
+            <div class="card-body">
+                {% load mediapath %}
+                <center/>
+                <div class=".my_card h-80">
+                    <rect width="100%" height="100%" fill="#55595c"></rect>
+                    <div>
+                        <ul class="d-flex list-unstyled mt-auto">
+
+                            <div class="text-decoration-none">
+
+                                <img src="{% mediapath object.image %}" width="70%" height="80%"
+                                     alt="Иллюстрация"
+                                     class="rounded-circle border border-dark">
+                                <h3 class="card-text">
+                                    {{ object.full_name|title|truncatechars:100 }} </h3>
+                                <rect width="100%" height="100%" fill="#55595c"></rect>
+                                <div class="card mb-1 box-shadow h-10">
+                                    <h5 class="card-text">
+                                        {{ object.category_doctor|title|truncatechars:100 }} </h5>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

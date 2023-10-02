@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row align-items g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Для связи с нами пишите нам на почту </h1>
+            <p class="col-lg-10 fs-4">Или обращаться по номеру: +7-(951)-873-22-11 </p>
+            <p class="col-lg-10 fs-4">У нас есть офисы в городах:</p>
+            <p class="col-lg-10 fs-4">
+                Воронеж,<br>
+                Россошь,<br>
+                Москва,<br>
+                Санкт-Петербург</p>
+        </div>
+        <div>
+            <div class="col-lg-7 text-right">
+                <p class="col-lg-10 fs-4" align="right">График работы</p>
+                    пн 08:00 - 19:00,<br>
+                    вт 08:00 - 19:00,<br>
+                    ср 08:00 - 19:00,<br>
+                    чт 08:00 - 19:00,<br>
+                    пт 08:00 - 19:00,<br>
+                    сб 08:00 - 19:00,
+                </p>
+                <br>
+            </div>
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+
+                {% csrf_token %}
+                <input class="form-control mb-2" name="number" placeholder="+7-951-222-22-22"/>
+                <input class="form-control mb-2" name="name" placeholder="Андрей"/>
+                <input class="form-control mb-2" name="email" placeholder="Andry2007@example.com"/>
+                <input class="form-control mb-2" name="massage" placeholder="Запись к травматологу.">
+                <a type="submit" href="{% url "doctors:contact" %}" class="button form-control ">Отправить</a>
+
+
+            </form>
+        </div>
+{% endblock %}

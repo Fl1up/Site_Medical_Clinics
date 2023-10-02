@@ -1,0 +1,64 @@
+    <body>
+        <div class="code-image">
+        <pre>
+          <code>
+            {% include "frontend/head.html" %}
+          </code>
+        </pre>
+        </div>
+        </body>
+
+        <center> #RECLAMA
+            {% include "frontend/marketing.html" %}
+            #END_RECLAMA
+
+
+            #DOCTORS
+            <div class="row justify-content-center">
+                {% for object in doctors|random|slice:":3" %}
+                    {% include "frontend/random_doctors.html" %}
+                {% endfor %}
+            </div>
+            #END_DOCTORS
+
+            #NUMBER
+            <div class="number">
+                {% include "frontend/number.html" %}
+            </div>
+            #END_NUMBER
+
+            # SHOP
+            <div class="row justify-content-center">
+                {% for object in shop|random|slice:":3" %}
+                    {% include "frontend/random_shop.html" %}
+                {% endfor %}
+            </div>
+            #END_SHOP
+
+            # SALE
+            <div>
+                <div class="carousel-inner">
+                    <img src="/media/are_common/sale.png"
+                         alt=" Картинка"
+                         width="100%" height="100%"
+                         class=" border border-dark">
+                    <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                    <div class="carousel-caption text-start">
+                    </div>
+                </div>
+            </div>
+            # END_SALE
+
+            # OFFER
+            <div>
+                <main>
+                    {% include "frontend/sale_offer.html" %}
+                </main>
+            </div>
+            # END_OFFER
+
+            #METRICS
+            <div>
+                {% include "frontend/merits.html" %}
+            </div>
+            #END_METRICS
