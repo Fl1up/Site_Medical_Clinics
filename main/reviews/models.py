@@ -10,7 +10,7 @@ NULLABLE = {
 class Reviews(models.Model):
     full_name = models.CharField(max_length=150, verbose_name="Полное имя")
     description = models.CharField(max_length=150, verbose_name="Описание")
-    img = models.ImageField(verbose_name="Фото")
+    img = models.ImageField(verbose_name="Фото", **NULLABLE)
 
     def __str__(self):
         return f"{self.full_name}"
@@ -18,6 +18,6 @@ class Reviews(models.Model):
     class Meta:
         verbose_name = "Отзыв"
         verbose_name_plural = "Отзывы"
-from django.db import models
+
 
 # Create your models here.

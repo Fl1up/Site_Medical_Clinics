@@ -11,18 +11,18 @@ class ReviewsCreateView(CreateView):
 
 class ReviewsListView(ListView):
     model = Reviews
-    template_name = "shop_list.html"
+    template_name = "reviews_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Добавление контекстных данных в словарь
-        context['shop'] = 'shop'
+        context['reviews'] = 'reviews'
         return context
 
 
 class ReviewsUpdateView(UpdateView):
     model = Reviews
-    success_url = reverse_lazy('shop:list')
+    success_url = reverse_lazy('reviews:list')
 
     def form_valid(self, form):
         if form.is_valid():
@@ -32,12 +32,11 @@ class ReviewsUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-
 class ReviewsDetailView(DetailView):
     model = Reviews
-    template_name = "shop_detail.html"
+    template_name = "reviews_detail.html"
 
 
 class ReviewsDeleteView(DeleteView):
     model = Reviews
-    success_url = reverse_lazy('shop:list')
+    success_url = reverse_lazy('reviews:list')

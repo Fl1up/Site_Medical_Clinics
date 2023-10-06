@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% if perms.doctors.create_doctors %}
+        <div>
+            <a class="btn btn-outline-primary" href="{% url 'doctors:create' %}">Добавить доктора</a>
+        </div>
+    {% endif %}
     <div class="col-12 mb-5">
     </div>
     {% for object in object_list %}
@@ -20,11 +25,17 @@
                                     <h3 class="card-text"> {{ object.full_name|title|truncatechars:100 }} </h3>
                                 </div>
                                 <h4 class="card-text"> {{ object.category_doctor|title|truncatechars:100 }} </h4>
-
                         </div>
                     </div>
+
+                    <a href="{% url "doctors:view" object.pk %}" class="btn btn-outline-info">Подробнее</a>
+                    {% if perms.doctors.edit_doctors %}
+                        <a href="{% url "doctors:edit" object.pk %}" class="btn btn-outline-danger">Детали</a>
+                    {% endif %}
+                    {% if perms.doctors.delete_doctors %}
+                        <a href="{% url "doctors:delete" object.pk %}" class="btn btn-outline-danger">Удалить</a>
+                    {% endif %}
                 </div>
-                <a href="{% url "doctors:view" object.pk %}" class="btn btn-outline-info">Подробнее</a>
             </div>
         </div>
     {% endfor %}

@@ -1,24 +1,46 @@
+<header class="n-header js-header-stick wide">
+    <div class="n-header__top">
 
-<div class="col-md-3 mb-2 mb-md-0">
-    <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-        <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
-            <use xlink:href="#bootstrap"></use>
-        </svg>
-    </a>
-</div>
+        <div class="n-header__box">
+              <img style="display: inline-block; margin:0 0 0 100px; vertical-align: middle;"
+                     src="/media/icon/змей.png"
+                     alt=" Картинка"
+                     class="rounded-circle border border-dark"
+                     width="75" height="75">
+                <h1 style="display: inline-block; vertical-align: middle;"><span class="blue ">CvantMed</span></h1>
+            <div class="n-header__toolbar">
+                <div class="n-header__buttons">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="n-header__bot">
+            {% include "frontend/head.html" %}
+        <div class="n-header__wrap">
 
-<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <li><a href="{% url "doctors:main" %}" class="nav-link px-2 link-secondary">Главная</a></li>
-    <li><a href="{% url "doctors:list" %}" class="nav-link px-2">Доктора</a></li>
-    <li><a href="{% url "shop:list" %}" class="nav-link px-2">Магазин</a></li>
-    <li><a href="#" class="nav-link px-2">FAQs</a></li>
-    <li><a href="{% url "doctors:contact" %}" class="nav-link px-2">Свзязь</a></li>
-</ul>
-
-<div class="col-md-5 text-end">
-{#    <button type="button" class="btn btn-outline-primary me-2">Авторизоваться</button>#}
-{#    <button type="button" class="btn btn-primary">Зарегистрироваться</button>#}
-
-</div>
-
+            <div class="n-header__menu">
+                <nav class="h-menu">
+                    <div class="h-menu__box">
+                        <a href="{% url "doctors:main" %}">Главная</a>
+                        <a href="{% url "doctors:list" %}">Врачи</a>
+                        <a href="{% url "blog:list" %}">Блог</a>
+                        <a href="{% url "shop:list" %}">Магазин</a>
+                        <a href="{% url "doctors:contact" %}">Связь</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url "users:logout" %}" class="nav-link px-2">Выйти</a>
+                            <a href="{% url "users:profile" %}" class="nav-link px-2">Профиль</a>
+                        {% else %}
+                            <a href="{% url "users:login" %}" class="nav-link px-2">Авторизоваться</a>
+                            <a href="{% url "users:register" %}" class="nav-link px-2">Зарегистрироваться</a>
+                        {% endif %}
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="col-md-4 text-center">
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
 

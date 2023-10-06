@@ -8,3 +8,6 @@ pytils
 load-dotenv
 pytz
 django-crontab
+django-debug-toolbar==4.2.0
+flake8
+autopep8

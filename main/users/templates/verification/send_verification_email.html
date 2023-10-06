@@ -1,8 +1,8 @@
-{% extends "mailing/base.html" %}
+{% extends "base.html" %}
 {% block content %}
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Подтвердить почту</button>
+        <button class="button" type="submit" >Подтвердить почту</button>
     </form>
 {% endblock %}

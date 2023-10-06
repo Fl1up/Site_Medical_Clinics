@@ -1,4 +1,4 @@
-{% extends 'mailing/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
     <div class="col-12">
         <form method="post" enctype="multipart/form-data">
@@ -14,13 +14,16 @@
                         <div class="card-body">
                             {% csrf_token %}
                             {{ form.as_p }}
-                            <button type="submit" class="btn btn-success">
+                            <button type="submit" class="button">
                                 Сохранить
                             </button>
-                            <button class="btn btn-outline-info">
-                                <a href="{% url "users:send_verification_email" %}" class="text-black">Подтвердить
-                                    почту</a>
-                            </button>
+{#                            {% if not user.is_verified %}#}
+{#                                <form method="post" action="{% url 'users:verify' %}">#}
+{#                                    {% csrf_token %}#}
+{#                                    <a href="{% url "users:send_verification_email" %}">Подтвердить#}
+{#                                        почту</a>#}
+{#                                </form>#}
+{#                            {% endif %}#}
                         </div>
                     </div>
                 </div>

@@ -98,11 +98,6 @@
         overflow: hidden;
     }
 
-    .code-image {
-        background-image: url("/media/are_common/неплохой фон.png");
-        width: 100%;
-        height: 100%;
-    }
 
     .blue {
         color: #20B2AA;
@@ -200,82 +195,105 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .testimonials {
-        padding: 100px 0;
-    }
-
-    .testimonials h3 {
-        margin-bottom: 20px;
-    }
-
-    .testimonials .card {
-        border-bottom: 3px #007bff solid !important;
-        transition: 0.5s;
-        margin-top: 60px;
-    }
-
-    .testimonials .card i {
-        background-color: #007bff;
-        color: #ffffff;
-        width: 75px;
-        height: 75px;
-        line-height: 75px;
-        margin: -40px auto 0 auto;
+    {#background-color: #4682B4;#} background-image: url('/media/are_common/fon.png');
+        background-size: cover;
+    {#background-repeat: no-repeat;{#background-position: center center;#}{#background: url("/media/are_common/img_11.png") center center repeat-y,#}{#url("/media/are_common/fon.png") center right repeat-y,#}{#url("/media/are_common/fon.png") center left repeat-y,#}{#linear-gradient(to bottom, #ffffff, #f0f0f0);#}
     }
 
 
-    .button:hover, .button:focus {
-        color: #313133;
-        transform: translateY(-6px);
+{#само меню#}
+    .n-header {
+        background: #fff;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 102;
+        padding-top: 106px;
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        -moz-transition: .2s;
+        transition: .2s
     }
 
-    button:hover::before, button:focus::before {
-        opacity: 1;
+
+    .n-header.wide .n-header__wrap, .n-header.wide .n-header__box {
+        max-width: 1430px;
+        width: 100%
+    }
+
+{#урезка кнопок#}
+    .n-header__wrap {
+        position: relative;
+        width: 1130px;
+        padding: 0 15px;
+        margin: 0 auto
+    }
+ {#серый фон в меню#}
+    .n-header__box {
+        position: static;
+        width: 400px;
+        height: 106px;
+        margin: 0 auto;
+        padding: 0 15px 0 300px
+    }
+{#обрезание кнопок в длинну #}
+{#    .n-header__menu {#}
+{#        padding-left: 270px#}
+{#    }#}
+
+{#длинна белого меню#}
+    .n-header__top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #f6f8f7;
+        color: #000;
+        z-index: 11
+    }
+
+{#тень#}
+    .n-header__bot {
+        border-top: 1px solid #e2e9e6;
+        border-bottom: 1px solid #e2e9e6;
+        -webkit-box-shadow: 0 10px 20px rgba(59, 106, 86, 0.2);
+        -moz-box-shadow: 0 10px 20px rgba(59, 106, 86, 0.2);
+        box-shadow: 0 10px 20px rgba(59, 106, 86, 0.2)
     }
 
 
-    button:hover::after, button:focus::after {
-        animation: none;
-        display: none;
+
+{#горизонтально расположение клавиш#}
+    .h-menu__box {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
     }
-
-    @keyframes ring {
-        0% {
-            width: 30px;
-            height: 30px;
-            opacity: 1;
-        }
-        100% {
-            width: 300px;
-            height: 300px;
-            opacity: 0;
-        }
-
-        carousel-item {
-            height: 100vh;
-            min-height: 200px;
-            background: no-repeat center center scroll;
-            background-size: 100% auto;
-        }
-
+{#сами кнопки#}
+    .h-menu a {
+        display: block;
+        position: relative;
+        color: #000;
+        line-height: 60px;
+        height: 60px;
+        white-space: nowrap;
+        text-decoration: none
     }
-
-    .koguvcavis-varazdel {
-        padding: 38px 0;
-        background: #adadad;
-        color: #2f2f2f;
-        text-align: center;
-    }
-
-    .sestim-donials {
-        max-width: 1200px;
-        margin: auto;
-        overflow: hidden;
-        padding: 0 20px;
-    }
-
 
 
 

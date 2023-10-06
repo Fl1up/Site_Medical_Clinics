@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.urls import reverse_lazy
+from django.utils.text import slugify
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
 from main.blog.models import Blog
+from main.doctors.forms import DoctorsForms
 from main.doctors.models import Doctors
 from main.reviews.models import Reviews
 from main.shop.models import Shop
@@ -11,17 +14,43 @@ from main.shop.models import Shop
 # Основа
 
 # Доктора
+
+class DoctorsCreateView(CreateView):
+    model = Shop
+    form_class = DoctorsForms
+    success_url = reverse_lazy('doctors:list')
+
+
 class DoctorsListView(ListView):
     model = Doctors
-    template_name = "doctors_list.html"
+    template_name = "doctors/doctors_list.html"
 
 
 class DoctorsDetailView(DetailView):
     model = Doctors
-    template_name = "doctors_detail.html"
+    template_name = "doctors/doctors_detail.html"
 
+
+class DoctorsDeleteView(DeleteView):
+    model = Doctors
+    success_url = reverse_lazy('doctors:list')
+
+
+class DoctorsUpdateView(UpdateView):
+    model = Doctors
+    form_class = DoctorsForms
+    success_url = reverse_lazy('doctors:list')
+
+    def form_valid(self, form):
+        if form.is_valid():
+            new_art = form.save()
+            new_art.slug = slugify(new_art.full_name)
+            new_art.save()
+        return super().form_valid(form)
 
 # Контакты
+
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name')

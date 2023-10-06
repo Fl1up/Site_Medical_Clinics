@@ -4,7 +4,9 @@ from main.doctors.models import NULLABLE
 
 
 class Shop(models.Model):
-    name_product = models.CharField(max_length=100, verbose_name="Наименование продукта")
+    name_product = models.CharField(
+        max_length=100,
+        verbose_name="Наименование продукта")
     description = models.TextField(verbose_name="Описание")
     image = models.ImageField(verbose_name="Фото", **NULLABLE)
     prise = models.IntegerField(default=0, verbose_name="Цена")

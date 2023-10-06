@@ -9,7 +9,7 @@ NULLABLE = {
 # Create your models here.
 class Blog(models.Model):
     title = models.CharField(max_length=150, verbose_name="Полное имя")
-    description = models.CharField(max_length=150, verbose_name="Описание")
+    description = models.CharField(max_length=550, verbose_name="Описание")
     img = models.ImageField(verbose_name="Фото")
 
     def __str__(self):
