@@ -13,6 +13,7 @@
 Требования к присудствию ТЭГОВ с их обозначениями:
 ![image](https://github.com/Fl1up/Site_Medical_Clinics/assets/127086954/48cff6d9-2d0b-43cc-b616-be34062785ca)
 
+
 Критерии:
 ![image](https://github.com/Fl1up/Site_Medical_Clinics/assets/127086954/4eb7d129-6379-44b6-b66b-9060cdec658f)
 
