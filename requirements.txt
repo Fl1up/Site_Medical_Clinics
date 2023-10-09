@@ -1,5 +1,4 @@
 asgiref==3.7.2
-Django==4.2.5
 sqlparse==0.4.4
 django
 psycopg2-binary
@@ -8,6 +7,6 @@ pytils
 load-dotenv
 pytz
 django-crontab
-django-debug-toolbar==4.2.0
 flake8
-autopep8
+autopep8-2.0.4
+
