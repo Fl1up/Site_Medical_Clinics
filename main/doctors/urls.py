@@ -2,8 +2,8 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from main.doctors.apps import DoctorsConfig
-from main.doctors.views import DoctorsListView, contact, DoctorsDetailView, main, DoctorsDeleteView, DoctorsUpdateView, \
-    DoctorsCreateView
+from main.doctors.views import DoctorsListView, contact, DoctorsDetailView, main,\
+    DoctorsDeleteView, DoctorsUpdateView, DoctorsCreateView
 
 app_name = DoctorsConfig.name
 

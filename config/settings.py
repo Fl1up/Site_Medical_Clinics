@@ -17,7 +17,7 @@ from django.conf import settings
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(BASE_DIR/".env")
+load_dotenv(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -26,7 +26,7 @@ load_dotenv(BASE_DIR/".env")
 SECRET_KEY = 'django-insecure-c_-#e_xuc8sop14*)h$=hsdtuz3cn2%^*u(m_43%jc(c=@k*3x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -88,7 +88,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "site_vv",
-        "USER": "postgres",
+        "USER": os.getenv("DATABASE_USER"),
         "HOST": "127.0.0.1",
         "PASSWORD": os.getenv("DATABASE_PASSWORD"),
         'PORT': 5432

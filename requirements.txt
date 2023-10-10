@@ -10,4 +10,5 @@ django-crontab
 flake8
 autopep8==2.0.4
 python-dotenv
+autoflake
 
