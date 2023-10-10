@@ -6,4 +6,3 @@ exclude =
 max-line-length = 120
 isort-show-traceback = True
 isort-config = setup.cfg
-format= auto

@@ -8,5 +8,6 @@ load-dotenv
 pytz
 django-crontab
 flake8
-autopep8-2.0.4
+autopep8==2.0.4
+python-dotenv
 
