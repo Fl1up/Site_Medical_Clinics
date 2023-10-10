@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load mediapath %}
-    {% if perms.shop_create_shop %}
+    {% if perms.blog_create_shop %}
         <div>
             <a class="btn btn-outline-primary" href="{% url 'blog:create' %}">Добавить блог</a>
         </div>
