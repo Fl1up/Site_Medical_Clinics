@@ -1,15 +1,15 @@
 asgiref==3.7.2
 sqlparse==0.4.4
-django
+Django==4.2.3
 psycopg2-binary
-pillow
+Pillow==10.0.0
 pytils
 load-dotenv
-pytz
+pytz==2023.3
 django-crontab
 flake8
 autopep8==2.0.4
 autoflake
-python-dotenv
+python-dotenv==1.0.0
 
 
