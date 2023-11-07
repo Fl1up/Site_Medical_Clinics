@@ -17,11 +17,12 @@
                             <button type="submit" class="button">
                                 Сохранить
                             </button>
-{#                            {% if not user.is_verified %}#}
+{#                             {% if not user.is_verified and user.verification_code == entered_verification_code %}#}
+{#                                {% csrf_token %}#}
 {#                                <form method="post" action="{% url 'users:verify' %}">#}
-{#                                    {% csrf_token %}#}
-{#                                    <a href="{% url "users:send_verification_email" %}">Подтвердить#}
-{#                                        почту</a>#}
+{#                                    <!-- Оставить поля для ввода кода и прочей информации -->#}
+{#                                    <input type="text" name="verification_code" placeholder="Введите код подтверждения">#}
+{#                                    <input type="submit" value="Подтвердить почту">#}
 {#                                </form>#}
 {#                            {% endif %}#}
                         </div>

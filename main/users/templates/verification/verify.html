@@ -9,4 +9,13 @@
         <br>
         <button class="button" type="submit" >Подтвердить код</button>
     </form>
-{% endblock %}
+
+    {% if not user.is_verified and user.verification_code == True %}
+    {% csrf_token %}
+    <form method="post" action="{% url 'users:verify' %}">
+        <!-- Оставить поля для ввода кода и прочей информации -->
+        <input type="text" name="verification_code" placeholder="Введите код подтверждения">
+        <input type="submit" value="Подтвердить почту">
+    </form>
+{% endif %}
+
