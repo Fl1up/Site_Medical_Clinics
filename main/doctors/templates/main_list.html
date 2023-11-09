@@ -1,115 +1,50 @@
 {% extends 'base.html' %}
-
 {% load random %}
 {% block content %}
     {% load mediapath %}
-
-    <header xmlns="http://www.w3.org/1999/html">
-
-
-        <main>
-            <center>
-{#                    {% include "frontend/head.html" %}#}
-
-
-                {% include "frontend/marketing.html" %}
-
-
-                <div>
-                    <header>
-                        <h3>Наша команда</h3>
-                        <h1><span class="blue">Познакомьтесь с нашими врачами</span></h1>
-                    </header>
-                </div>
-
-
+    {% include "frontend/marketing.html" %}
+    <div class="container marketing">
+        <center>
+            <h3>Наша команда</h3>
+            <h1><span class="blue">Познакомьтесь с нашими врачами</span></h1>
+            <br>
+            {#            <!-- Три столбца текста под каруселью -->#}
+            <div class="row">
+                {% for object in doctors|random|slice:":3" %}
+                    {% include "frontend/random_doctors.html" %}
+                {% endfor %}
+                {% include "frontend/number.html" %}
+                <h3>Онлайн магазин</h3>
+                <h1><span class="blue">Медицинские продукты</span></h1>
+                {% for object in shop|random|slice:":3" %}
+                    {% include "frontend/random_shop.html" %}
+                {% endfor %}
+                <h1 style="color:#FF0000">!Акция!</h1>
+                <img src="/media/are_common/sale.png"
+                     alt=" Картинка"
+                     width="100%" height="100%"
+                     class=" border border-dark">
+                <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                {% include "frontend/sale_offer.html" %}
+            </div>
+        </center>
+    </div>
+    <center>
+        <h3>Наша команда</h3>
+        <h1><span class="blue">Почему пациенты выбирают</span></h1>
+    </center>
+    {% include "frontend/merits.html" %}
+    <div class="container marketing">
+        <center>
+            <div class="row">
+                <h3>Блоги</h3>
                 <div class="row justify-content-center">
-                    {% for object in doctors|random|slice:":3" %}
-                        {% include "frontend/random_doctors.html" %}
+                    {% for object in blog|random|slice:":3" %}
+                        {% include "frontend/random_blog.html" %}
                     {% endfor %}
                 </div>
-
-
-                <div class="number">
-                    {% include "frontend/number.html" %}
-                </div>
-
-
-                <header>
-                    <h3>Онлайн магазин</h3>
-                    <h1><span class="blue">Медицинские продукты</span></h1>
-                </header>
-                <div class="row justify-content-center">
-                    {% for object in shop|random|slice:":3" %}
-                        {% include "frontend/random_shop.html" %}
-                    {% endfor %}
-                </div>
-
-
-                <body>
-                <div class="waviy">
-                    <span style="--i:1">А</span>
-                    <span style="--i:2">К</span>
-                    <span style="--i:3">Ц</span>
-                    <span style="--i:4">И</span>
-                    <span style="--i:5">Я</span>
-
-                    <div class="carousel-inner">
-                        <img src="/media/are_common/sale.png"
-                             alt=" Картинка"
-                             width="100%" height="100%"
-                             class=" border border-dark">
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
-                        <div class="carousel-caption text-start">
-                        </div>
-                    </div>
-                </div>
-                </body>
-
-
-                <div>
-                    <main>
-                        {% include "frontend/sale_offer.html" %}
-                    </main>
-                </div>
-
-
-                <header>
-                    <h3>Наша команда</h3>
-                    <h1><span class="blue">Почему пациенты выбирают</span></h1>
-                </header>
-                <div>
-                    {% include "frontend/merits.html" %}
-                </div>
-
-
-                <div>
-                    <header>
-                        <h3>Наши отзывы</h3>
-                    </header>
-                    <div class="row justify-content-center">
-                        {% for object in reviews|random|slice:":3" %}
-                            {% include "frontend/random_reviews.html" %}
-                        {% endfor %}
-                    </div>
-                </div>
-
-
-                <div>
-                    <header>
-                        <h3>Блоги</h3>
-                    </header>
-                    <div class="row justify-content-center">
-                        {% for object in blog|random|slice:":3" %}
-                            {% include "frontend/random_blog.html" %}
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div>
-                    {% include "frontend/add_icons.html" %}
-                </div>
-
-
-            </center>
+                {% include "frontend/add_icons.html" %}
+            </div>
+        </center>
+    </div>
 {% endblock %}

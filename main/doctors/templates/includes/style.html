@@ -196,13 +196,15 @@
     body {
         font-family: Arial, Helvetica, sans-serif;
     {#background-color: #4682B4;#} background-image: url('/media/are_common/fon.png');
+        background-attachment: fixed;
         background-size: cover;
     {#background-repeat: no-repeat;{#background-position: center center;#}{#background: url("/media/are_common/img_11.png") center center repeat-y,#}{#url("/media/are_common/fon.png") center right repeat-y,#}{#url("/media/are_common/fon.png") center left repeat-y,#}{#linear-gradient(to bottom, #ffffff, #f0f0f0);#}
     }
 
 
-{#само меню#}
+    {#само меню#}
     .n-header {
+        position: static;
         background: #fff;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -224,27 +226,29 @@
         width: 100%
     }
 
-{#урезка кнопок#}
+    {#урезка кнопок#}
     .n-header__wrap {
         position: relative;
         width: 1130px;
         padding: 0 15px;
         margin: 0 auto
     }
- {#серый фон в меню#}
+
+    {#серый фон в меню#}
     .n-header__box {
-        position: static;
+        position: fixed;
         width: 400px;
         height: 106px;
         margin: 0 auto;
         padding: 0 15px 0 300px
     }
-{#обрезание кнопок в длинну #}
-{#    .n-header__menu {#}
-{#        padding-left: 270px#}
-{#    }#}
 
-{#длинна белого меню#}
+    {#обрезание кнопок в длинну #}
+    {#    .n-header__menu {#}
+    {#        padding-left: 270px#}
+    {#    }#}
+
+    {#длинна белого меню#}
     .n-header__top {
         position: fixed;
         top: 0;
@@ -255,7 +259,7 @@
         z-index: 11
     }
 
-{#тень#}
+    {#тень#}
     .n-header__bot {
         border-top: 1px solid #e2e9e6;
         border-bottom: 1px solid #e2e9e6;
@@ -265,8 +269,7 @@
     }
 
 
-
-{#горизонтально расположение клавиш#}
+    {#горизонтально расположение клавиш#}
     .h-menu__box {
         display: -webkit-box;
         display: -webkit-flex;
@@ -284,7 +287,8 @@
         -ms-flex-align: center;
         align-items: center
     }
-{#сами кнопки#}
+
+    {#сами кнопки#}
     .h-menu a {
         display: block;
         position: relative;
@@ -294,7 +298,6 @@
         white-space: nowrap;
         text-decoration: none
     }
-
 
 
 </style>

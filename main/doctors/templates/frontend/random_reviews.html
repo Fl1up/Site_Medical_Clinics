@@ -1,24 +1,31 @@
-<div class="col-md-4">
-    <div class="card mb-4 box-shadow">
-        <div class="card-body">
+{% load random %}
+{% block content %}
+    {% load mediapath %}
+{% for object in reviews|random|slice:":3" %}
+<div class="row">
+    <div class="col-md-3">
+        <div class="card mb-3 box-shadow">
             {% load mediapath %}
             <center/>
-            <div class="card card-cover h-50 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
                  style="background-color: #d4edda4;">
                 <div class="d-flex flex-column h-20 p-5 pb-3 text-shadow-1">
                     <ul class="d-flex list-unstyled mt-auto">
-                        <li class="me-auto">
+                        <li class="me-auto d-inline-block"> <!-- Добавлен класс d-inline-block -->
                             <img src="{% mediapath object.img %}" width="40%"
                                  height="300" alt="Иллюстрация"
                                  class="rounded-circle border border-dark">
                         </li>
+                        <!-- Добавьте другие элементы с иконками здесь -->
+                    </ul>
                 </div>
                 <h5 class="card-text">
                     {{ object.full_name|title|truncatechars:100 }}</h5>
                 <h6 class="card-title pricing-card-title">{{ object.description|title }}<small</h6>
             </div>
         </div>
-
     </div>
 </div>
+{% endfor %}
+{% endblock %}
 

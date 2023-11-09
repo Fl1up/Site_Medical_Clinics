@@ -1,42 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
     {% if perms.doctors.create_doctors %}
-        <div>
-            <a class="btn btn-outline-primary" href="{% url 'doctors:create' %}">Добавить доктора</a>
-        </div>
+        <a class="btn btn-outline-primary" href="{% url 'doctors:create' %}">Добавить доктора</a>
     {% endif %}
     <div class="col-12 mb-5">
     </div>
     {% for object in object_list %}
         {% load mediapath %}
-        <div class="col-md-5">
-            <div class="card mb-4 box-shadow">
-                <div class="card-body">
-                    {% load mediapath %}
-                    <center/>
-                    <div class="card card-cover h-50 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                         style="background-color: #d4edda4;">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                            <center/>
-                            <ul class="d-flex list-unstyled mt-auto">
-                                <div class="ratio-1x1">
-                                    <img src="{% mediapath object.image %}" width="140" height="140" alt="Иллюстрация"
-                                         class="rounded-circle border border-dark">
-                                    <h3 class="card-text"> {{ object.full_name|title|truncatechars:100 }} </h3>
-                                </div>
-                                <h4 class="card-text"> {{ object.category_doctor|title|truncatechars:100 }} </h4>
-                        </div>
+        <div>
+            <div>
+                <hr class="featurette-divider">
+                <div class="row featurette">
+                    <hr class="featurette-divider">
+                    <div class="col-md-7 order-md-2">
+                        <h2 class="featurette-heading fw-normal lh-1">
+                            {{ object.category_doctor|title|truncatechars:100 }}<span
+                                class="text-body-secondary"></span></h2>
+                        <h4> {{ object.full_name|title|truncatechars:100 }}</h4>
+                        <h5> {{ object.description|title }}</h5>
+                    </div>
+                    <div class="col-md-5 order-md-1">
+                        <img src="{% mediapath object.image %}" width="500" height="500"
+                             alt="Иллюстрация"
+                             class="border border-dark">
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect>
                     </div>
 
-                    <a href="{% url "doctors:view" object.pk %}" class="btn btn-outline-info">Подробнее</a>
-                    {% if perms.doctors.edit_doctors %}
-                        <a href="{% url "doctors:edit" object.pk %}" class="btn btn-outline-danger">Детали</a>
-                    {% endif %}
-                    {% if perms.doctors.delete_doctors %}
-                        <a href="{% url "doctors:delete" object.pk %}" class="btn btn-outline-danger">Удалить</a>
-                    {% endif %}
                 </div>
             </div>
+            <center>
+                <a href="{% url "doctors:view" object.pk %}" class="btn btn-outline-info">Подробнее</a>
+
+                {% if perms.doctors.edit_doctors %}
+                    <a href="{% url "doctors:edit" object.pk %}" class="btn btn-outline-danger">Детали</a>
+                {% endif %}
+                {% if perms.doctors.delete_doctors %}
+                    <a href="{% url "doctors:delete" object.pk %}" class="btn btn-outline-danger">Удалить</a>
+                {% endif %}
+            </center>
         </div>
     {% endfor %}
 {% endblock %}
